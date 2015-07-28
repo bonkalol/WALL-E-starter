@@ -40,6 +40,8 @@ gulp.task('concat', function () {
 	return gulp.src('app/**/*.js')
 		.pipe(plumber({errorHandler: log}))
 		.pipe(sourcemaps.init())
+		.pipe(jshint({esnext: true}))
+		.pipe(jshint.reporter(stylish))
 		.pipe(babel())
 		.pipe(concat(name + '.js'))
 		.pipe(sourcemaps.write('maps/'))
