@@ -65,6 +65,8 @@ gulp.task('build', function () {
 
 gulp.task('default', function () {
 
+	gulp.start('browser-sync');
+
 	watch('app/**/*.js', function () {
 
 		gulp.start('concat');
