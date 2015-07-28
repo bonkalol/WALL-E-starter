@@ -45,7 +45,8 @@ gulp.task('concat', function () {
 		.pipe(babel())
 		.pipe(concat(name + '.js'))
 		.pipe(sourcemaps.write('maps/'))
-		.pipe(gulp.dest('./builded/'));
+		.pipe(gulp.dest('./builded/'))
+		.pipe(reload({stream: true}));
 
 });
 
